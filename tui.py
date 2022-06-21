@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
-import datetime
 import sys
 from typing import Any, Tuple, Callable
 
@@ -23,16 +22,16 @@ class TUI:
     def __print_objectslist(self) -> None:
         print_sep = lambda: print('-' * 100)
         print_sep()
-        fmt = '%3s %-10s %-20s %-20s %-20s %10s'
+        fmt = '%3s %-10s %-30s %-30s %10s %10s'
         print(fmt % ('#', 'VAR_1', 'VAR_2', 'VAR_3', 'VAR_4', 'VAR_5'))
         print_sep()
         for index in range(self.__list.length_objectslist()):
-            singleobjectlist = self.__list.indexof_objectslist(index)
-            print(fmt % (index + 1, singleobjectlist.string_1.value, singleobjectlist.string_2.value, singleobjectlist.user.value, singleobjectlist.datetime_1.value, singleobjectlist.datetime_2.value))
+            single_object_list = self.__list.indexof_objectslist(index)
+            print(fmt % (index+1, single_object_list.string_1.var_1, single_object_list.string_2.var_2, single_object_list.user.var_3, single_object_list.date.var_4, single_object_list.time.var_5))
         print_sep()
 
     def __add_object(self) -> None:
-        new_object= Objects(*self.__read_object())
+        new_object = Objects(*self.__read_object())
         self.__list.add_object(new_object)
         print('Object added!')
 

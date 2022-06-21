@@ -10,7 +10,7 @@ from folderApp.menu import Entry, Key, Description
 @pytest.fixture
 def objects():
     return [
-        Objects(Object1('aksdkja'), Object2('ajksba'), Object3('giada'), Object4(datetime.datetime.now()), Object5(datetime.datetime.now())),
+        Objects(Object1('aksdkja'), Object2('ajksba'), Object3('giada'), Object4('12/12/2022'), Object5('01:00')),
     ]
 
 
