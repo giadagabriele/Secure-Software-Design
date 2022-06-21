@@ -1,5 +1,4 @@
 from dataclasses import dataclass, field
-from datetime import date, time
 from typing import List
 
 from typeguard import typechecked
@@ -99,3 +98,11 @@ class ListOfObjects:
     def remove_object(self, index: int) -> None:
         validate('index', index, min_value=0, max_value=self.length_objectslist() - 1)
         del self.__list[index]
+
+    '''
+    def sort_by_producer(self) -> None:
+        self.__vehicles.sort(key=lambda x: x.producer)
+
+    def sort_by_price(self) -> None:
+        self.__vehicles.sort(key=lambda x: x.price)
+    '''
